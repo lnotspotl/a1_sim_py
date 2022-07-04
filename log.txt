@@ -1,0 +1,27 @@
+
+# How to build 
+
+sudo apt-get install ros-$ROS_DISTRO-controller-manager \
+	ros-$ROS_DISTRO-joint-state-controller \
+	ros-$ROS_DISTRO-position-controllers \
+	ros-$ROS_DISTRO-gazebo-ros-pkgs \
+	ros-$ROS_DISTRO-gazebo-ros-control \
+	ros-$ROS_DISTRO-effort-controllers 
+    
+cop a1 && sds
+cop a1_controller && sds
+cop a1_description && sds
+cop a1_gazebo && sds
+cop a1_joystick && sds
+
+source devel/setup.bash
+roslaunch a1 run_robot_gazebo.launch
+
+chmod +x a1_joystick/scripts/ramped_joystick.py
+chmod +x a1_controller/scripts/robot_controller_gazebo.py
+
+# Error
+
+
+
+ros melodic을 설치하면 기본적으로 python 2.7로 설정이 된다.
