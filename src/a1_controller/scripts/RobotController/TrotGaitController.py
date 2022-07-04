@@ -67,6 +67,14 @@ class TrotGaitController(GaitController):
             if not(msg.buttons[6] or msg.buttons[7]):
                 self.use_button = True
 
+    def updateVelCommand(self, msg, state, command):
+        command.velocity[0] = msg.linear.x * self.max_x_velocity
+        command.velocity[1] = msg.linear.y * self.max_y_velocity
+        command.yaw_rate = msg.angular.z * self.max_yaw_rate
+
+        self.use_imu = True
+        self.autoRest = True
+
     def step(self, state, command):
         if self.autoRest:
             if command.velocity[0] == 0 and command.velocity[1] == 0 and command.yaw_rate == 0:
@@ -76,21 +84,25 @@ class TrotGaitController(GaitController):
                 self.trotNeeded = True
 
         if self.trotNeeded:
+            """ Calculate which feet should be in contact """
             contact_modes = self.contacts(state.ticks)
 
             new_foot_locations = np.zeros((3,4))
             for leg_index in range(4):
                 contact_mode = contact_modes[leg_index]
+                # stance
                 if contact_mode == 1:
                     new_location = self.stanceController.next_foot_location(leg_index, state, command)
+                # swing
                 else:
                     swing_proportion = float(self.subphase_ticks(state.ticks)) / float(self.swing_ticks)
 
                     new_location = self.swingController.next_foot_location(swing_proportion,leg_index,state,command)
-
+                
                 new_foot_locations[:, leg_index] = new_location
 
             # tilt compensation
+            # foot locations에 imu의 각도를 반영한다.
             if self.use_imu:
                 compensation = self.pid_controller.run(state.imu_roll, state.imu_pitch)
                 roll_compensation = -compensation[0]
@@ -104,7 +116,6 @@ class TrotGaitController(GaitController):
             temp = self.default_stance
             temp[2] = [command.robot_height] * 4
             return temp
-
 
     def run(self, state, command):
         state.foot_locations = self.step(state, command)

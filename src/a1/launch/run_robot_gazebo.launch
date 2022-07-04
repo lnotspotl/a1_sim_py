@@ -4,7 +4,7 @@
     <include file="$(find a1_gazebo)/launch/simulation.launch" />
 
     <!-- Joystick -->
-    <include file="$(find a1_joystick)/launch/ramped_joystick.launch" />
+    <!-- <include file="$(find a1_joystick)/launch/ramped_joystick.launch" /> -->
 
     <!-- Robot Controller -->
     <include 

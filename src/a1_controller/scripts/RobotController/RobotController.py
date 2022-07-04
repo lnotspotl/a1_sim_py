@@ -15,8 +15,11 @@ class Robot(object):
         self.body = body
         self.legs = legs
 
+        # 몸체 가로 / 2
         self.delta_x = self.body[0] * 0.5
+        # 몸체 세로 / 2 + hip 모터만큼
         self.delta_y = self.body[1] * 0.5 + self.legs[1]
+        # TODO: 이건 뭐지?
         self.x_shift_front = 0.02
         self.x_shift_back = -0.0
         self.default_height = 0.25
@@ -68,6 +71,16 @@ class Robot(object):
             self.currentController.pid_controller.reset()
             self.command.rest_event = False
 
+    def cmd_vel_command(self, msg):
+
+        if msg:
+            self.command.trot_event = True
+            self.command.crawl_event = False
+            self.command.stand_event = False
+            self.command.rest_event = False
+
+        self.currentController.updateVelCommand(msg, self.state, self.command)            
+
     def joystick_command(self,msg):
         if msg.buttons[0]: # rest
             self.command.trot_event = False
@@ -110,3 +123,20 @@ class Robot(object):
         return np.array([[self.delta_x + self.x_shift_front,self.delta_x + self.x_shift_front,-self.delta_x + self.x_shift_back,-self.delta_x + self.x_shift_back],
                          [-self.delta_y                    ,self.delta_y                     ,-self.delta_y                    , self.delta_y                    ],
                          [0                                ,0                                ,0                                ,0                                ]])
+
+# [
+#     [self.delta_x + self.x_shift_front,
+#     self.delta_x + self.x_shift_front,
+#     -self.delta_x + self.x_shift_back,
+#     -self.delta_x + self.x_shift_back],
+
+#     [-self.delta_y,
+#     self.delta_y,
+#     -self.delta_y,
+#     self.delta_y],
+    
+#     [0
+#     ,0
+#     ,0
+#     ,0]
+# ]

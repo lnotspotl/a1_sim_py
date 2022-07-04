@@ -39,6 +39,9 @@ class RestController(object):
             if not (msg.buttons[7]):
                 self.use_button = True
 
+    def updateVelCommand(self, msg, state, command):
+        pass
+
     @property
     def default_stance(self):
         return self.def_stance
