@@ -1,10 +1,13 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 #Author: lnotspotl
 
 import rospy
 
 from sensor_msgs.msg import Joy,Imu
 from geometry_msgs.msg import Twist
+
 from RobotController import RobotController
 from InverseKinematics import robot_IK
 from std_msgs.msg import Float64

@@ -1,4 +1,6 @@
 #!/usr/bin/evn python3
+# -*- coding: utf-8 -*-
+
 #Author: lnotspotl
 
 import numpy as np

@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
 #Author: lnotspotl
 
 import rospy
@@ -33,7 +35,7 @@ class RestController(object):
             if msg.buttons[7]:
                 self.use_imu = not self.use_imu
                 self.use_button = False
-                rospy.loginfo(f"Rest Controller - Use roll/pitch compensation: {self.use_imu}")
+                rospy.loginfo("Rest Controller - Use roll/pitch compensation: " + str(self.use_imu))
 
         if not self.use_button:
             if not (msg.buttons[7]):

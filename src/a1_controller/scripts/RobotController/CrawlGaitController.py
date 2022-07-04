@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
 # Author: mike4192 https://github.com/mike4192/spotMicro
 # Modified by: lnotspotl
 
@@ -18,7 +20,11 @@ class CrawlGaitController(GaitController):
         
         z_leg_lift = 0.14
 
-        super().__init__(stance_time, swing_time, time_step, contact_phases, default_stance)
+        try:
+            super().__init__(stance_time, swing_time, time_step, contact_phases, default_stance)
+        except:
+            super(CrawlGaitController, self).__init__(stance_time, swing_time, time_step, contact_phases, default_stance)
+        
         self.max_x_velocity = 0.011 #[m/s]
         self.max_yaw_rate = 0.15 #[rad/s]
 

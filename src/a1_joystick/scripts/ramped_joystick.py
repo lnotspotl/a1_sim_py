@@ -41,13 +41,13 @@ class PS4_controller(object):
                 self.speed_index -= 1
                 if self.speed_index < 0:
                     self.speed_index = len(self.available_speeds) - 1
-                rospy.loginfo(f"Joystick speed:{self.available_speeds[self.speed_index]}")
+                rospy.loginfo("Joystick speed: " + str(self.available_speeds[self.speed_index]))
                 self.use_button = False
             elif msg.buttons[5]:
                 self.speed_index += 1
                 if self.speed_index >= len(self.available_speeds):
                     self.speed_index = 0
-                rospy.loginfo(f"Joystick speed:{self.available_speeds[self.speed_index]}")
+                rospy.loginfo("Joystick speed: " + str(self.available_speeds[self.speed_index])")
                 self.use_button = False
 
         if not self.use_button:

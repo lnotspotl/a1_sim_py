@@ -3,7 +3,8 @@
 
 import numpy as np
 from math import sqrt, atan2, sin, cos, pi
-from RoboticsUtilities.Transformations import homog_transform_inverse,homog_transform
+# from RoboticsUtilities.Transformations import homog_transform_inverse,homog_transform
+from RoboticsUtilities import homog_transform_inverse,homog_transform
 
 class InverseKinematics(object):
     def __init__(self, bodyDimensions, legDimensions):

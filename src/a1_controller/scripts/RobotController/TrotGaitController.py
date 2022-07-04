@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
 #Author: mike4192 https://github.com/mike4192/spotMicro
 #Modified by: lnotspotl
 
@@ -27,7 +29,10 @@ class TrotGaitController(GaitController):
 
         z_leg_lift = 0.14
 
-        super().__init__(stance_time, swing_time, time_step, contact_phases, default_stance)
+        try:
+            super().__init__(stance_time, swing_time, time_step, contact_phases, default_stance)
+        except:
+            super(TrotGaitController, self).__init__(stance_time, swing_time, time_step, contact_phases, default_stance)
 
         self.max_x_velocity = 0.035 #[m/s] 
         self.max_y_velocity = 0.02 #[m/s]
@@ -54,14 +59,14 @@ class TrotGaitController(GaitController):
             if msg.buttons[7]:
                 self.use_imu = not self.use_imu
                 self.use_button = False
-                rospy.loginfo(f"Trot Gait Controller - Use roll/pitch compensation: {self.use_imu}")
+                rospy.loginfo("Trot Gait Controller - Use roll/pitch compensation: " + str(self.use_imu))
 
             elif msg.buttons[6]:
                 self.autoRest = not self.autoRest
                 if not self.autoRest:
                     self.trotNeeded = True
                 self.use_button = False
-                rospy.loginfo(f"Trot Gait Controller - Use autorest: {self.autoRest}")
+                rospy.loginfo("Trot Gait Controller - Use autorest: " + str(self.autoRest))
             
         if not self.use_button:
             if not(msg.buttons[6] or msg.buttons[7]):

@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
 #Author: mike4192 https://github.com/mike4192/spotMicro
 #Modified by: lnotspotl
 
