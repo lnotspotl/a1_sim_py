@@ -6,6 +6,7 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
+        - /TF1/Tree1
       Splitter Ratio: 0.4994337558746338
     Tree Height: 394
   - Class: rviz/Selection
@@ -204,6 +205,117 @@ Visualization Manager:
       Transport Hint: raw
       Unreliable: false
       Value: true
+    - Class: rviz/TF
+      Enabled: true
+      Frame Timeout: 15
+      Frames:
+        All Enabled: false
+        FL_calf:
+          Value: false
+        FL_foot:
+          Value: false
+        FL_hip:
+          Value: false
+        FL_thigh_shoulder:
+          Value: false
+        FR_calf:
+          Value: false
+        FR_foot:
+          Value: false
+        FR_hip:
+          Value: false
+        FR_thigh_shoulder:
+          Value: false
+        RL_calf:
+          Value: false
+        RL_foot:
+          Value: false
+        RL_hip:
+          Value: false
+        RL_thigh_shoulder:
+          Value: false
+        RR_calf:
+          Value: false
+        RR_foot:
+          Value: false
+        RR_hip:
+          Value: false
+        RR_thigh_shoulder:
+          Value: false
+        base:
+          Value: true
+        camera_chin:
+          Value: false
+        camera_face:
+          Value: false
+        camera_laserscan_link_left:
+          Value: false
+        camera_laserscan_link_right:
+          Value: false
+        camera_left:
+          Value: false
+        camera_optical_chin:
+          Value: false
+        camera_optical_face:
+          Value: false
+        camera_optical_left:
+          Value: false
+        camera_optical_rearDown:
+          Value: false
+        camera_optical_right:
+          Value: false
+        camera_rearDown:
+          Value: false
+        camera_right:
+          Value: false
+        imu_link:
+          Value: false
+        trunk:
+          Value: false
+        ultraSound_face:
+          Value: false
+        ultraSound_left:
+          Value: false
+        ultraSound_right:
+          Value: false
+      Marker Alpha: 1
+      Marker Scale: 1
+      Name: TF
+      Show Arrows: true
+      Show Axes: true
+      Show Names: true
+      Tree:
+        base:
+          trunk:
+            camera_chin:
+              camera_optical_chin:
+                {}
+            camera_face:
+              camera_optical_face:
+                {}
+            camera_left:
+              camera_laserscan_link_left:
+                {}
+              camera_optical_left:
+                {}
+            camera_rearDown:
+              camera_optical_rearDown:
+                {}
+            camera_right:
+              camera_laserscan_link_right:
+                {}
+              camera_optical_right:
+                {}
+            imu_link:
+              {}
+            ultraSound_face:
+              {}
+            ultraSound_left:
+              {}
+            ultraSound_right:
+              {}
+      Update Interval: 0
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -232,7 +344,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 3.444070339202881
+      Distance: 3.108264446258545
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -240,17 +352,17 @@ Visualization Manager:
         Value: false
       Field of View: 0.7853981852531433
       Focal Point:
-        X: 0.11417893320322037
-        Y: -0.022040700539946556
-        Z: -0.10980064421892166
+        X: 0.10880711674690247
+        Y: -0.21716414391994476
+        Z: -0.26186904311180115
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 1.3547970056533813
+      Pitch: 0.38979753851890564
       Target Frame: <Fixed Frame>
-      Yaw: 4.8035736083984375
+      Yaw: 5.163574695587158
     Saved: ~
 Window Geometry:
   Displays:
@@ -271,4 +383,4 @@ Window Geometry:
     collapsed: true
   Width: 2264
   X: 1007
-  Y: 341
+  Y: 267

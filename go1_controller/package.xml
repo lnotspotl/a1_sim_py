@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>a1_controller</name>
+  <name>go1_controller</name>
   <version>1.0.0</version>
-  <description>The a1_controller package</description>
+  <description>The go1_controller package</description>
 
   <maintainer email="lnotspotl@gmail.com">lnotspotl</maintainer>
 

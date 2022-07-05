@@ -1,4 +1,4 @@
-a1_gazebo:
+go1_gazebo:
   
   joint_states_controller:
       type: joint_state_controller/JointStateController
