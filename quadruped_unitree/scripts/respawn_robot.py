@@ -14,7 +14,7 @@ from gazebo_msgs.msg import ModelState
 from gazebo_msgs.srv import SetModelState 
 
 rospy.init_node("respawn_robot_node")
-rospy.loginfo("==== Robot Turning Server Started ====")
+rospy.loginfo("==== Robot Respawn Client Started ====")
 
 rospy.wait_for_service("/gazebo/set_model_state")
 service_client = rospy.ServiceProxy("/gazebo/set_model_state", SetModelState)
