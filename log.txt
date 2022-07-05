@@ -39,7 +39,7 @@ roslaunch a1_description a1_rviz.launch
 roslaunch go1_description go1_rviz.launch
 
 roslaunch quadruped_unitree a1_gazebo.launch
-roslaunch quadruped_unitree go1_gazebo.launch world_file_name:="no_roof_small_warehouse"
+roslaunch quadruped_unitree go1_gazebo.launch
 
 rosrun teleop_twist_keyboard teleop_twist_keyboard.py cmd_vel:=/key_vel
 rosrun teleop_twist_keyboard teleop_twist_keyboard.py cmd_vel:=/joy_vel

@@ -1,7 +1,7 @@
 <launch>
 
     <!-- Gazebo Simulation -->
-    <include file="$(find a1_gazebo)/launch/simulation_go1.launch" />
+    <include file="$(find go1_gazebo)/launch/simulation.launch" />
 
     <!-- twist mux -->
     <include file="$(find quadruped_unitree)/launch/custom_twist_mux.launch" />
