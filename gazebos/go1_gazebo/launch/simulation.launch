@@ -1,7 +1,7 @@
 <launch>
 
-    <!-- <arg name="world_file_name" default="no_roof_small_warehouse"/> -->
-    <arg name="world_file_name" default="normal"/>
+    <arg name="world_file_name" default="no_roof_small_warehouse"/>
+    <!-- <arg name="world_file_name" default="normal"/> -->
 
     <!-- Empty world -->
     <include file="$(find gazebo_ros)/launch/empty_world.launch">
@@ -10,8 +10,8 @@
     </include>
 
     <!-- Robot -->
-    <!-- <arg name="robot" default="$(find go1_description)/urdf/go1.urdf"/> -->
-    <arg name="robot" default="$(find go1_description)/urdf/go1_without_sensor.urdf"/>
+    <arg name="robot" default="$(find go1_description)/urdf/go1.urdf"/>
+    <!-- <arg name="robot" default="$(find go1_description)/urdf/go1_without_sensor.urdf"/> -->
     <param name="robot_description" command="$(find xacro)/xacro --inorder $(arg robot)"/>
     <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -x 0.0 -y 0.0 -z 0.4 -model go1_gazebo"/>
 
