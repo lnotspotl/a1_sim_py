@@ -34,6 +34,10 @@ chmod +x quadruped_unitree/scripts/*.py
 ros melodic을 설치하면 기본적으로 python 2.7로 설정이 된다.
 
 ```
+roslaunch a1_description a1_rviz.launch
+roslaunch go1_description go1_rviz.launch
+
+
 roslaunch quadruped_unitree a1_gazebo.launch
 roslaunch quadruped_unitree go1_gazebo.launch
 
@@ -50,3 +54,5 @@ roslaunch a1_description a1_rviz.launch
 
 # TODO
 [] rosrun teleop_twist_joy teleop_node cmd_vel:=/input_joy/cmd_vel
+[] go1_rviz.launch 수정
+[] 

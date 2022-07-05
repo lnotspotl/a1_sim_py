@@ -12,17 +12,20 @@
     <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -x 0.0 -y 0.0 -z 0.4 -model a1_gazebo"/>
 
     <!-- Controllers -->
-    <!-- <rosparam file="$(find a1_gazebo)/config/controllers.yaml" command="load"/>
+    <rosparam file="$(find a1_gazebo)/config/go1_controllers.yaml" command="load"/>
     <node name="controller_spawner" pkg="controller_manager" type="spawner" output="screen" ns="a1_gazebo"
           args="FR_hip_joint FR_thigh_joint FR_calf_joint
                 FL_hip_joint FL_thigh_joint FL_calf_joint
                 RR_hip_joint RR_thigh_joint RR_calf_joint
-                RL_hip_joint RL_thigh_joint RL_calf_joint"/> -->
+                RL_hip_joint RL_thigh_joint RL_calf_joint"/>
 
     <!-- Robot state publisher -->
     <node pkg="robot_state_publisher" type="robot_state_publisher"  name="robot_state_publisher" respawn="false" output="screen">
       <remap from="/joint_states" to="/a1_gazebo/joint_states" />
       <param name="publish_frequency" type="double" value="40" />
     </node>
+
+    <node pkg="rviz" type="rviz" name="rviz" respawn="false" output="screen"
+        args="-d $(find a1_gazebo)/launch/go1_gazebo.rviz"/>
   
 </launch>
