@@ -4,10 +4,12 @@
 sudo apt-get install ros-$ROS_DISTRO-controller-manager \
 	ros-$ROS_DISTRO-joint-state-publisher-gui \
 	ros-$ROS_DISTRO-joint-state-controller \
+	ros-$ROS_DISTRO-teleop-twist-keyboard \
 	ros-$ROS_DISTRO-position-controllers \
-	ros-$ROS_DISTRO-gazebo-ros-pkgs \
 	ros-$ROS_DISTRO-gazebo-ros-control \
 	ros-$ROS_DISTRO-effort-controllers \
+	ros-$ROS_DISTRO-teleop-twist-joy \
+	ros-$ROS_DISTRO-gazebo-ros-pkgs \
 	ros-$ROS_DISTRO-twist-mux \
 	ros-$ROS_DISTRO-xacro
 
