@@ -13,14 +13,13 @@ sudo apt-get install ros-$ROS_DISTRO-controller-manager \
 	ros-$ROS_DISTRO-twist-mux \
 	ros-$ROS_DISTRO-xacro
 
-sudo apt install ros-melodic-teleop-twist-joy -y
-sudo apt install ros-melodic-teleop-twist-keyboard -y
-
 cop quadruped_unitree && sds
 cop a1_controller && sds
+cop go1_controller && sds
 cop a1_description && sds
 cop go1_description && sds
 cop a1_gazebo && sds
+cop go1_gazebo && sds
 cop a1_joystick && sds
 
 source devel/setup.bash
@@ -32,7 +31,6 @@ chmod +x go1_controller/scripts/robot_controller_gazebo.py
 chmod +x quadruped_unitree/scripts/*.py
 
 # Error
-
 
 ros melodic을 설치하면 기본적으로 python 2.7로 설정이 된다.
 
@@ -57,8 +55,6 @@ rosrun xacro xacro robot.xacro > go1.urdf
 
 
 # TODO
-[] rosrun teleop_twist_joy teleop_node cmd_vel:=/input_joy/cmd_vel
-[] go1_rviz.launch 수정
 [] gazebo foot force plugin 물어보기
 [] odom... (계산할지 or gazebo에서 추출할지)
 [] docs
