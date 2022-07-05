@@ -1,5 +1,9 @@
 # Unitree Quadruped robot simulation - Python version
 
+<p align="center">
+    <img src="./resources/go1_walk.gif" height="480">
+</p>
+
 This repository contains all the files and code needed to simulate the [a1](https://www.unitree.com/products/a1) & [go1](https://www.unitree.com/products/go1) quadrupedal robot using [Gazebo](http://gazebosim.org/) and [ROS](https://www.ros.org/).
 The software runs on below envs
 
