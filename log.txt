@@ -26,6 +26,7 @@ roslaunch quadruped_unitree a1_gazebo.launch
 
 chmod +x a1_joystick/scripts/ramped_joystick.py
 chmod +x a1_controller/scripts/robot_controller_gazebo.py
+chmod +x quadruped_unitree/scripts/*.py
 
 # Error
 

@@ -22,7 +22,7 @@
       <remap from="marker" to="twist_marker"/>
     </node>
   
-    <node pkg="twist_mux" type="joystick_relay.py" name="joystick_relay" output="screen">
+    <node pkg="quadruped_unitree" type="joystick_relay.py" name="joystick_relay" output="screen">
       <remap from="joy_vel_in"  to="$(arg joy_vel_in)"/>
       <remap from="joy_vel_out" to="$(arg joy_vel_out)"/>
   
