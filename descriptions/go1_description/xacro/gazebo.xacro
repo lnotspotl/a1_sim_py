@@ -97,7 +97,7 @@
                 <image>
                     <width>928</width>
                     <height>800</height>
-                    <format>R8G8B8</format>
+                    <format>B8G8R8</format>
                 </image>
                 <depth_camera></depth_camera>
                 <clip>
@@ -140,7 +140,7 @@
         <image>
           <width>640</width>
           <height>480</height>
-          <format>R8G8B8</format>
+          <format>B8G8R8</format>
         </image>
         <clip>
           <near>0.05</near>

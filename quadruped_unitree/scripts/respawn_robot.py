@@ -1,4 +1,4 @@
-#! /usr/bin/env python
+#! /usr/bin/env python3
 
 """
 Respawn quadruped robot in Gazebo Simulator
@@ -24,17 +24,17 @@ request_msg = ModelState()
 def is_invalid_angle(angle):
 
     if abs(angle) < 3.141592:
-        return true
+        return True
     else:
-        return false
+        return False
 
 while not rospy.is_shutdown():
     try:
         robot_name = input("> Choose Your Robot Name \n1) a1 \n2) go1 \n\n>>> ")
 
-        if robot_name == 1:
+        if robot_name == "1":
             robot_name = "a1_gazebo"
-        elif robot_name == 2:
+        elif robot_name == "2":
             robot_name = "go1_gazebo"
 
         # x, y, z, _ = input("> Type xyz robot spawn location ex) 0 0 0 : ").split()

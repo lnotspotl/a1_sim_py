@@ -26,6 +26,8 @@ roslaunch quadruped_unitree a1_gazebo.launch
 
 chmod +x a1_joystick/scripts/ramped_joystick.py
 chmod +x a1_controller/scripts/robot_controller_gazebo.py
+chmod +x go1_controller/scripts/robot_controller_gazebo.py
+chmod +x quadruped_unitree/scripts/*.py
 
 # Error
 
@@ -33,6 +35,9 @@ chmod +x a1_controller/scripts/robot_controller_gazebo.py
 ros melodic을 설치하면 기본적으로 python 2.7로 설정이 된다.
 
 ```
+roslaunch a1_description a1_rviz.launch
+roslaunch go1_description go1_rviz.launch
+
 roslaunch quadruped_unitree a1_gazebo.launch
 roslaunch quadruped_unitree go1_gazebo.launch
 
@@ -40,12 +45,18 @@ rosrun teleop_twist_keyboard teleop_twist_keyboard.py cmd_vel:=/key_vel
 rosrun teleop_twist_keyboard teleop_twist_keyboard.py cmd_vel:=/joy_vel
 
 rosrun quadruped_unitree respawn_robot.py
+rosrun quadruped_unitree base_link_pose.py
 
 roslaunch go1_description go1_rviz.launch
 roslaunch a1_description a1_rviz.launch
 
-
+rosrun xacro xacro robot.xacro > go1.urdf
 ```
+
 
 # TODO
 [] rosrun teleop_twist_joy teleop_node cmd_vel:=/input_joy/cmd_vel
+[] go1_rviz.launch 수정
+[] gazebo foot force plugin 물어보기
+[] odom... (계산할지 or gazebo에서 추출할지)
+[] docs
