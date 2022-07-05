@@ -1,10 +1,11 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>a1</name>
+  <name>quadruped_unitree</name>
   <version>1.0.0</version>
-  <description>The a1 package</description>
+  <description>Quadruped simulation package for Unitree Robotics</description>
 
-  <maintainer email="lnotspotl@gmail.com">lnotspotl</maintainer>
+  <!-- This package is forked from lnotspotl "lnotspotl@gmail.com" -->
+  <maintainer email="tge1375@naver.com">kimsooyoung</maintainer>
 
   <license>MIT</license>
 

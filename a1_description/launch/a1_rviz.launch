@@ -18,6 +18,6 @@
     </node>
 
     <node pkg="rviz" type="rviz" name="rviz" respawn="false" output="screen"
-        args="-d $(find a1_description)/launch/check_joint.rviz"/>
+        args="-d $(find a1_description)/rviz/check_joint.rviz"/>
 
 </launch>

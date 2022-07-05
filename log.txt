@@ -2,12 +2,17 @@
 # How to build 
 
 sudo apt-get install ros-$ROS_DISTRO-controller-manager \
+	ros-$ROS_DISTRO-joint-state-publisher-gui \
 	ros-$ROS_DISTRO-joint-state-controller \
 	ros-$ROS_DISTRO-position-controllers \
 	ros-$ROS_DISTRO-gazebo-ros-pkgs \
 	ros-$ROS_DISTRO-gazebo-ros-control \
-	ros-$ROS_DISTRO-effort-controllers 
-    
+	ros-$ROS_DISTRO-effort-controllers \
+	ros-$ROS_DISTRO-twist-mux
+
+sudo apt install ros-melodic-teleop-twist-joy -y
+sudo apt install ros-melodic-teleop-twist-keyboard -y
+
 cop a1 && sds
 cop a1_controller && sds
 cop a1_description && sds
@@ -15,7 +20,7 @@ cop a1_gazebo && sds
 cop a1_joystick && sds
 
 source devel/setup.bash
-roslaunch a1 run_robot_gazebo.launch
+roslaunch quadruped_unitree a1_gazebo.launch
 
 chmod +x a1_joystick/scripts/ramped_joystick.py
 chmod +x a1_controller/scripts/robot_controller_gazebo.py
@@ -23,5 +28,16 @@ chmod +x a1_controller/scripts/robot_controller_gazebo.py
 # Error
 
 
-
 ros melodic을 설치하면 기본적으로 python 2.7로 설정이 된다.
+
+```
+roslaunch quadruped_unitree a1_gazebo.launch
+
+rosrun teleop_twist_keyboard teleop_twist_keyboard.py cmd_vel:=/key_vel
+rosrun teleop_twist_keyboard teleop_twist_keyboard.py cmd_vel:=/joy_vel
+
+rosrun quadruped_unitree respawn_robot.py
+```
+
+# TODO
+[] rosrun teleop_twist_joy teleop_node cmd_vel:=/input_joy/cmd_vel
