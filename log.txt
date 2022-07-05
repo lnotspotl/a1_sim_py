@@ -37,6 +37,11 @@ rosrun teleop_twist_keyboard teleop_twist_keyboard.py cmd_vel:=/key_vel
 rosrun teleop_twist_keyboard teleop_twist_keyboard.py cmd_vel:=/joy_vel
 
 rosrun quadruped_unitree respawn_robot.py
+
+roslaunch go1_description go1_rviz.launch
+roslaunch a1_description a1_rviz.launch
+
+
 ```
 
 # TODO
