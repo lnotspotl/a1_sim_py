@@ -12,7 +12,6 @@ from RobotController import RobotController
 from InverseKinematics import robot_IK
 from std_msgs.msg import Float64
 
-# 쓰는 게 좋은지 아닌지 솔직히 잘 모르겠음...
 USE_IMU = True
 RATE = 60
 
@@ -49,7 +48,6 @@ for i in range(len(command_topics)):
 # imu 값은 gazebo plugin에서 받으며, 이는 회전 보상 시 사용됨
 if USE_IMU:
     rospy.Subscriber("a1_imu/base_link_orientation",Imu,a1_robot.imu_orientation)
-# rospy.Subscriber("a1_joy/joy_ramped",Joy,a1_robot.joystick_command)
 rospy.Subscriber("/twist_mux/cmd_vel", Twist, a1_robot.cmd_vel_command)
 
 rate = rospy.Rate(RATE)
