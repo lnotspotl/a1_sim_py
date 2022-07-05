@@ -1,0 +1,12 @@
+<launch>
+
+    <!-- Gazebo Simulation -->
+    <include file="$(find a1_gazebo)/launch/simulation_go1.launch" />
+
+    <!-- twist mux -->
+    <!-- <include file="$(find quadruped_unitree)/launch/custom_twist_mux.launch" /> -->
+
+    <!-- Robot Controller -->
+    <!-- <include file="$(find a1_controller)/launch/robot_controller.launch"/> -->
+
+</launch>
