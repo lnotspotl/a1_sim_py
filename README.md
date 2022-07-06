@@ -60,9 +60,11 @@ catkin_make --only-pkg-with-deps go1_gazebo && source devel/setup.bash
 ```
 cd <code-dir>
 chmod +x a1_joystick/scripts/ramped_joystick.py
+chmod +x quadruped_unitree/scripts/*.py
+
+cd controllers
 chmod +x a1_controller/scripts/robot_controller_gazebo.py
 chmod +x go1_controller/scripts/robot_controller_gazebo.py
-chmod +x quadruped_unitree/scripts/*.py
 ```
 
 > If you just wanna try this and don't care about anything about ros, gazebo, etc... Just use prepared docker image

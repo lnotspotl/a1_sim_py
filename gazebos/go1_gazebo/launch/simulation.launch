@@ -1,7 +1,7 @@
 <launch>
 
-    <arg name="world_file_name" default="no_roof_small_warehouse"/>
-    <!-- <arg name="world_file_name" default="normal"/> -->
+    <!-- <arg name="world_file_name" default="no_roof_small_warehouse"/> -->
+    <arg name="world_file_name" default="normal"/>
 
     <!-- Empty world -->
     <include file="$(find gazebo_ros)/launch/empty_world.launch">
