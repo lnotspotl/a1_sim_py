@@ -190,4 +190,83 @@
     <xacro:ultraSound name="face">
         <origin rpy="0 0 0" xyz="0.2747 0.0 -0.0088"/>
     </xacro:ultraSound>
+
+    <link name="sensor_mount">
+        <inertial>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <mass value="0.15033659991756945"/>
+            <inertia ixx="8.7e-05" ixy="0.0" ixz="-2e-05" iyy="7.2e-05" iyz="0.0" izz="0.000108"/>
+        </inertial>
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <mesh filename="package://go1_description/meshes/Go1_pure_mount.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="grey"/>
+        </visual>
+        <collision>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <mesh filename="package://go1_description/meshes/Go1_pure_mount.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+    </link>
+    <joint name="sensor_mount_joint" type="fixed">
+        <origin rpy="0 0 1.5707" xyz="0.0 0 0.0"/>
+        <parent link="trunk"/>
+        <child link="sensor_mount"/>
+    </joint>
+
+    <link name="lidar_mount">
+        <inertial>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <mass value="0.15033659991756945"/>
+            <inertia ixx="8.7e-05" ixy="0.0" ixz="-2e-05" iyy="7.2e-05" iyz="0.0" izz="0.000108"/>
+        </inertial>
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <mesh filename="package://go1_description/meshes/Go1_velodyne_set_v1.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="black"/>
+        </visual>
+        <collision>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <mesh filename="package://go1_description/meshes/Go1_velodyne_set_v1.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+    </link>
+    <joint name="lidar_mount_joint" type="fixed">
+        <origin rpy="0 0 1.5707" xyz="0.0 0 0.0"/>
+        <parent link="trunk"/>
+        <child link="lidar_mount"/>
+    </joint>
+
+    <link name="camera_mount">
+        <inertial>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <mass value="0.15033659991756945"/>
+            <inertia ixx="8.7e-05" ixy="0.0" ixz="-2e-05" iyy="7.2e-05" iyz="0.0" izz="0.000108"/>
+        </inertial>
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <mesh filename="package://go1_description/meshes/Go1_rs_set.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="silver"/>
+        </visual>
+        <collision>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <mesh filename="package://go1_description/meshes/Go1_rs_set.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+    </link>
+    <joint name="camera_mount_joint" type="fixed">
+        <origin rpy="0 0 1.5707" xyz="0.0 0 0.0"/>
+        <parent link="trunk"/>
+        <child link="camera_mount"/>
+    </joint>
+
 </robot>
