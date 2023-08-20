@@ -272,11 +272,32 @@
         <child link="camera_mount"/>
     </joint>
 
-    <!-- <joint name="velodyne_joint" type="fixed">
-      <origin xyz="0.159654 0 0.09835" rpy="0 0 0" />
+    <joint name="avia_joint" type="fixed">
+      <origin xyz="0.225 0 0.1195" rpy="0 0 0" />
       <parent link="trunk"/>
-      <child link="velodyne" />
+      <child link="avia" />
     </joint>
-    <link name="velodyne"/> -->
+    <link name="avia"/>
+
+    <joint name="front_gemini_joint" type="fixed">
+      <origin xyz="0.152475 0 0.1996" rpy="0 0 0" />
+      <parent link="trunk"/>
+      <child link="front_gemini" />
+    </joint>
+    <link name="front_gemini"/>
+
+    <joint name="left_gemini_joint" type="fixed">
+      <origin xyz="0 0.097475 0.0754" rpy="0 0 ${PI/2}" />
+      <parent link="trunk"/>
+      <child link="left_gemini" />
+    </joint>
+    <link name="left_gemini"/>
+
+    <joint name="right_gemini_joint" type="fixed">
+      <origin xyz="0 -0.097475 0.0754" rpy="0 0 ${-PI/2}" />
+      <parent link="trunk"/>
+      <child link="right_gemini" />
+    </joint>
+    <link name="right_gemini"/>
 
 </robot>
