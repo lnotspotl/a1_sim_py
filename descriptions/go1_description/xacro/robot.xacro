@@ -7,7 +7,7 @@
     <xacro:include filename="$(find go1_description)/xacro/leg.xacro"/>
     <!-- <xacro:include filename="$(find go1_description)/xacro/stairs.xacro"/> -->
     <xacro:include filename="$(find go1_description)/xacro/gazebo.xacro"/>
-    <xacro:include filename="$(find go1_description)/xacro/depthCamera.xacro"/>
+    <!-- <xacro:include filename="$(find go1_description)/xacro/depthCamera.xacro"/> -->
     <xacro:include filename="$(find go1_description)/xacro/ultraSound.xacro"/>
     <!-- <xacro:include filename="$(find go1_gazebo)/launch/stairs.urdf.xacro"/> -->
 
@@ -141,43 +141,43 @@
         <origin rpy="0 0 0" xyz="${-leg_offset_x} ${leg_offset_y} 0"/>
     </xacro:leg>
 
-    <xacro:depthCamera camID="1" name="face">
+    <!-- <xacro:depthCamera camID="1" name="face">
         <origin rpy="0 0 0" xyz="0.2785 0.0125 0.0167"/>
-    </xacro:depthCamera>
+    </xacro:depthCamera> -->
 
-    <xacro:depthCamera camID="2" name="chin">
+    <!-- <xacro:depthCamera camID="2" name="chin">
         <origin rpy="0 ${PI/2} 0" xyz="0.2522 0.0125 -0.0436"/>
-    </xacro:depthCamera>
+    </xacro:depthCamera> -->
 
-    <xacro:depthCamera camID="3" name="left">
+    <!-- <xacro:depthCamera camID="3" name="left">
         <origin rpy="0 0.2618 ${PI/2}" xyz="-0.066 0.082 -0.0176"/>
-    </xacro:depthCamera>
+    </xacro:depthCamera> -->
 
-    <xacro:depthCamera camID="4" name="right">
+    <!-- <xacro:depthCamera camID="4" name="right">
         <origin rpy="0 0.2618 ${-PI/2}" xyz="-0.041 -0.082 -0.0176"/>
-    </xacro:depthCamera>
+    </xacro:depthCamera> -->
 
-    <xacro:depthCamera camID="5" name="rearDown">
+    <!-- <xacro:depthCamera camID="5" name="rearDown">
         <origin rpy="0 ${PI/2} 0" xyz="-0.0825 0.0125 -0.04365"/>
-    </xacro:depthCamera>
+    </xacro:depthCamera> -->
 
-    <joint name="camera_laserscan_joint_left" type="fixed">
+    <!-- <joint name="camera_laserscan_joint_left" type="fixed">
         <origin rpy="0 0.2618 0" xyz="0 0 0"/>
         <parent link="camera_left"/>
         <child link="camera_laserscan_link_left"/>
-    </joint>
+    </joint> -->
 
-    <link name="camera_laserscan_link_left">
-    </link>
+    <!-- <link name="camera_laserscan_link_left">
+    </link> -->
 
-    <joint name="camera_laserscan_joint_right" type="fixed">
+    <!-- <joint name="camera_laserscan_joint_right" type="fixed">
         <origin rpy="0 0.2618 0" xyz="0 0 0"/>
         <parent link="camera_right"/>
         <child link="camera_laserscan_link_right"/>
-    </joint>
+    </joint> -->
 
-    <link name="camera_laserscan_link_right">
-    </link>
+    <!-- <link name="camera_laserscan_link_right">
+    </link> -->
 
     <xacro:ultraSound name="left">
         <origin rpy="0 0.2618 ${PI/2}" xyz="-0.0535  0.0826 0.00868"/>
@@ -190,83 +190,4 @@
     <xacro:ultraSound name="face">
         <origin rpy="0 0 0" xyz="0.2747 0.0 -0.0088"/>
     </xacro:ultraSound>
-
-    <link name="sensor_mount">
-        <inertial>
-            <origin rpy="0 0 0" xyz="0 0 0"/>
-            <mass value="0.15033659991756945"/>
-            <inertia ixx="8.7e-05" ixy="0.0" ixz="-2e-05" iyy="7.2e-05" iyz="0.0" izz="0.000108"/>
-        </inertial>
-        <visual>
-            <origin rpy="0 0 0" xyz="0 0 0"/>
-            <geometry>
-                <mesh filename="package://go1_description/meshes/Go1_pure_mount.stl" scale="0.001 0.001 0.001"/>
-            </geometry>
-            <material name="grey"/>
-        </visual>
-        <collision>
-            <origin rpy="0 0 0" xyz="0 0 0"/>
-            <geometry>
-                <mesh filename="package://go1_description/meshes/Go1_pure_mount.stl" scale="0.001 0.001 0.001"/>
-            </geometry>
-        </collision>
-    </link>
-    <joint name="sensor_mount_joint" type="fixed">
-        <origin rpy="0 0 1.5707" xyz="0.0 0 0.0"/>
-        <parent link="trunk"/>
-        <child link="sensor_mount"/>
-    </joint>
-
-    <link name="lidar_mount">
-        <inertial>
-            <origin rpy="0 0 0" xyz="0 0 0"/>
-            <mass value="0.15033659991756945"/>
-            <inertia ixx="8.7e-05" ixy="0.0" ixz="-2e-05" iyy="7.2e-05" iyz="0.0" izz="0.000108"/>
-        </inertial>
-        <visual>
-            <origin rpy="0 0 0" xyz="0 0 0"/>
-            <geometry>
-                <mesh filename="package://go1_description/meshes/Go1_velodyne_set_v1.stl" scale="0.001 0.001 0.001"/>
-            </geometry>
-            <material name="black"/>
-        </visual>
-        <collision>
-            <origin rpy="0 0 0" xyz="0 0 0"/>
-            <geometry>
-                <mesh filename="package://go1_description/meshes/Go1_velodyne_set_v1.stl" scale="0.001 0.001 0.001"/>
-            </geometry>
-        </collision>
-    </link>
-    <joint name="lidar_mount_joint" type="fixed">
-        <origin rpy="0 0 1.5707" xyz="0.0 0 0.0"/>
-        <parent link="trunk"/>
-        <child link="lidar_mount"/>
-    </joint>
-
-    <link name="camera_mount">
-        <inertial>
-            <origin rpy="0 0 0" xyz="0 0 0"/>
-            <mass value="0.15033659991756945"/>
-            <inertia ixx="8.7e-05" ixy="0.0" ixz="-2e-05" iyy="7.2e-05" iyz="0.0" izz="0.000108"/>
-        </inertial>
-        <visual>
-            <origin rpy="0 0 0" xyz="0 0 0"/>
-            <geometry>
-                <mesh filename="package://go1_description/meshes/Go1_rs_set.stl" scale="0.001 0.001 0.001"/>
-            </geometry>
-            <material name="silver"/>
-        </visual>
-        <collision>
-            <origin rpy="0 0 0" xyz="0 0 0"/>
-            <geometry>
-                <mesh filename="package://go1_description/meshes/Go1_rs_set.stl" scale="0.001 0.001 0.001"/>
-            </geometry>
-        </collision>
-    </link>
-    <joint name="camera_mount_joint" type="fixed">
-        <origin rpy="0 0 1.5707" xyz="0.0 0 0.0"/>
-        <parent link="trunk"/>
-        <child link="camera_mount"/>
-    </joint>
-
 </robot>
