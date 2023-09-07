@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>quadruped_unitree</name>
+  <version>1.0.0</version>
+  <description>Quadruped simulation package for Unitree Robotics</description>
+
+  <!-- This package is forked from lnotspotl "lnotspotl@gmail.com" -->
+  <maintainer email="tge1375@naver.com">kimsooyoung</maintainer>
+
+  <license>MIT</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>rospy</build_depend>
+  <build_export_depend>rospy</build_export_depend>
+  <exec_depend>rospy</exec_depend>
+
+</package>
